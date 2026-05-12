@@ -1,0 +1,49 @@
+// src/components/Input/Input.module.scss
+@use "../../styles/variables" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+  width: 100%;
+}
+
+.label {
+  font-size: $text-sm;
+  font-weight: 500;
+  color: $gray-700;
+}
+
+.input {
+  padding: $spacing-2 $spacing-3;
+  font-size: $text-sm;
+  line-height: 1.5;
+  border: 1px solid $gray-300;
+  border-radius: $radius-md;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+
+  &:disabled {
+    background-color: $gray-100;
+    cursor: not-allowed;
+  }
+
+  &.error {
+    border-color: $danger;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($danger, 0.1);
+    }
+  }
+}
+
+.errorMsg {
+  font-size: $text-xs;
+  color: $danger;
+  margin-top: $spacing-1;
+}
